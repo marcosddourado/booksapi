@@ -1,14 +1,14 @@
 var express = require("express");
-Message = require("./api/models/msgModel");
+var Message = require("./api/models/msgModel");
 
-app = express();
-port = process.env.PORT || 3000;
+var app = express();
+var port = process.env.PORT || 3000;
 
-mongoose = require("mongoose");
+var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/msgdb");
 
-bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
